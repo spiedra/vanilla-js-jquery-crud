@@ -31,7 +31,7 @@ const getGenresJquery = () => {
 // GET BY ID
 
 const getMoviesJqueryById = () => {
-  const ajax = $.ajax({
+  $.ajax({
     url:
       "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/movies/" +
       1 /* add some id */,
@@ -44,7 +44,7 @@ const getMoviesJqueryById = () => {
 };
 
 const getGenresJqueryById = () => {
-  const ajax = $.ajax({
+  $.ajax({
     url:
       "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/genres/" +
       1 /* add some id */,
@@ -58,15 +58,11 @@ const getGenresJqueryById = () => {
 
 // UPDATE
 
-
-
 // DELETE
 
-// -----------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------
 
 // AJX -> Vanilla JS
-
-// -----------------------------------------------------------------------------------
 
 // GET
 
@@ -130,6 +126,8 @@ const getGenresVanillaJsById = () => {
     });
 };
 
+// -----------------------------------------------------------------------------------------
+
 // Request
 
 /* --------------- GET --------------------- */
@@ -147,4 +145,3 @@ getMoviesVanillaJsById();
 getGenresVanillaJsById();
 
 /* --------------- UPDATE / PUT --------------------- */
-
