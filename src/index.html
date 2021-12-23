@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>CRUD Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -11,7 +11,42 @@
       media="screen"
       href="../public/css/main.css"
     />
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Vanilla JS and JQuery CRUD example</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Movies</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Synopsis</th>
+              <th>Genre</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="moviesTbody"></tbody>
+        </table>
+      </section>
+      <section>
+        <h2>Genres</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="genresTbody"></tbody>
+        </table>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
