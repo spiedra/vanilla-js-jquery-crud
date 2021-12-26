@@ -60,8 +60,7 @@ const getGenresJqueryById = () => {
 
 const createMoviesJquery = () => {
   $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
     type: "POST",
     data: {
       name: "Spieder-Men 2",
@@ -76,19 +75,18 @@ const createMoviesJquery = () => {
 };
 
 const createGenresJquery = () => {
-    $.ajax({
-      url:
-        "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
-      type: "POST",
-      data: {
-        name: "Action 9",
-      },
-      dataType: "json",
-      success: function (response) {
-        console.log(response);
-      },
-    });
-  };
+  $.ajax({
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
+    type: "POST",
+    data: {
+      name: "Action 9",
+    },
+    dataType: "json",
+    success: function (response) {
+      console.log(response);
+    },
+  });
+};
 
 /* --------------- UPDATE / PUT --------------------- */
 
