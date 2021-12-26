@@ -24,7 +24,7 @@ main section {
   align-items: flex-start;
   width: 80%;
   background-color: #f2f2f2;
-  padding: 2em;
+  padding: 0 1.5em 1.5em 1.5em;
   border-radius: 10px;
 }
 
@@ -34,11 +34,39 @@ main section h2 {
 
 main section table {
   align-self: center;
-  width: 50%;
+  width: 98%;
+}
+
+main section table td {
+  padding: 0.5em;
+  border: 1px solid;
 }
 
 main section:nth-child(1) {
   margin-bottom: 3em;
+}
+
+.btn__add,
+.btn__delete,
+.btn__edit {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #ffff;
+  border: none;
+  border-radius: 10px;
+  margin: 0.2em;
+}
+
+.btn__add {
+  background-color: #198754;
+}
+
+.btn__delete {
+  background-color: #dc3545;
+}
+
+.btn__edit {
+  background-color: #0d6efd;
 }
 
 footer {

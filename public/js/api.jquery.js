@@ -12,7 +12,7 @@ const getMoviesJquery = () => {
     type: "GET",
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      fillMoviesTbodyJquery(response);
     },
   });
 };
@@ -23,7 +23,7 @@ const getGenresJquery = () => {
     type: "GET",
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      fillGenresTbodyJquery(response);
     },
   });
 };
@@ -145,8 +145,8 @@ const deleteMoviesJquery = () => {
 
 /* --------------- GET --------------------- */
 
-// getMoviesJquery();
-// getGenresJquery();
+getMoviesJquery();
+getGenresJquery();
 
 /* --------------- GET BY ID --------------------- */
 

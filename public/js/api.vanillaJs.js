@@ -94,7 +94,6 @@ const createGenresVanillaJs = () => {
     });
 };
 
-
 /* --------------- UPDATE / PUT --------------------- */
 
 const updateMoviesVanillaJs = () => {
@@ -182,4 +181,3 @@ const deleteMoviesVanillaJs = () => {
 /* --------------- Delete --------------------- */
 
 // deleteMoviesVanillaJs();
-// getMoviesVanillaJsById();

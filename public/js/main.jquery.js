@@ -8,8 +8,53 @@
 
 // DOM Manipulation -> JQuery
 
-// -----------------------------------------------------------------------------------
+function fillMoviesTbodyJquery(reponse) {
+  const moviesTbody = $("#moviesTbody");
+  moviesTbody.empty();
 
-// DOM Manipulation -> Vanilla JS
+  reponse.forEach((element) => {
+    moviesTbody.append(
+      $("<tr>")
+        .append($("<td>").append(element["id"]))
+        .append($("<td>").append(element["name"]))
+        .append($("<td>").append(element["synopsis"]))
+        .append($("<td>").append(element["genre_id"]))
+        .append(
+          $("<td>").append(
+            $(
+              "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
+            ).append("Add"),
+            $(
+              "<button class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
+            ).append("Delete"),
+            $(
+              "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
+            ).append("Edit")
+          )
+        )
+    );
+  });
+}
 
-// -----------------------------------------------------------------------------------
+function fillGenresTbodyJquery(reponse) {
+  const moviesTbody = $("#genresTbody");
+  moviesTbody.empty();
+
+  reponse.forEach((element) => {
+    moviesTbody.append(
+      $("<tr>")
+        .append($("<td>").append(element["id"]))
+        .append($("<td>").append(element["name"]))
+        .append(
+          $("<td>").append(
+            $(
+              "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
+            ).append("Add"),
+            $(
+              "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
+            ).append("Edit")
+          )
+        )
+    );
+  });
+}
