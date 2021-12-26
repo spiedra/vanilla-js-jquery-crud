@@ -1,104 +1,6 @@
-// AJAX -> jQuery
-
-/*
-  Docs: https://www.w3schools.com/jquery/ajax_ajax.asp
-*/
-
-// GET
-
-const getMoviesJquery = () => {
-  $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-const getGenresJquery = () => {
-  $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-// GET BY ID
-
-const getMoviesJqueryById = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      1 /* add some id */,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-const getGenresJqueryById = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      1 /* add some id */,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-// UPDATE
-
-const updateMoviesJquery = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      1 /* add some id */,
-    type: "PUT",
-    data: {
-      name: "Spieder-Men",
-      synopsis: "Good!",
-      genre_id: 1,
-    },
-    dataType: "text",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-const updateGenresJquery = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      1 /* add some id */,
-    type: "PUT",
-    data: {
-      name: "LoveJquery",
-    },
-    dataType: "text",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
-// DELETE
-
-// -----------------------------------------------------------------------------------------
-
 // AJX -> Vanilla JS
 
-// GET
+/* --------------- GET --------------------- */
 
 const getMoviesVanillaJs = () => {
   fetch("https://lavarel-rest-ful-api.vercel.app/public/api/movies", {
@@ -122,12 +24,12 @@ const getGenresVanillaJs = () => {
     });
 };
 
-// GET BY ID
+/* --------------- GET BY ID --------------------- */
 
 const getMoviesVanillaJsById = () => {
   fetch(
-    "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      1 /* add some id */,
+    "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
+      -1 /* add some id */,
     {
       method: "GET",
     }
@@ -154,7 +56,46 @@ const getGenresVanillaJsById = () => {
     });
 };
 
-// UPDATE
+/* --------------- CREAT / POST --------------------- */
+
+const createMoviesVanillaJs = () => {
+  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/movies", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "Juan Carloss vanilla movie",
+      synopsis: "jajaj",
+      genre_id: 1,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+const createGenresVanillaJs = () => {
+  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "Juan Carloss vanilla genre",
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+
+/* --------------- UPDATE / PUT --------------------- */
 
 const updateMoviesVanillaJs = () => {
   fetch(
@@ -172,7 +113,7 @@ const updateMoviesVanillaJs = () => {
       }),
     }
   )
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error("Error:", error));
 };
@@ -191,32 +132,54 @@ const updateGenresVanillaJs = () => {
       }),
     }
   )
-    .then((response) => response.text())
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+};
+
+/* --------------- Delete --------------------- */
+
+const deleteMoviesVanillaJs = () => {
+  fetch(
+    "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
+      36 /* add some id*/,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  )
+    .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
 };
 
 // -----------------------------------------------------------------------------------------
 
-// Request
+// Requests
 
 /* --------------- GET --------------------- */
 
-// getMoviesJquery();
-// getGenresJquery();
 // getMoviesVanillaJs();
 // getGenresVanillaJs();
 
 /* --------------- GET BY ID --------------------- */
 
-// getMoviesJqueryById();
-// getGenresJqueryById();
 // getMoviesVanillaJsById();
 // getGenresVanillaJsById();
 
+/* --------------- CREATE / POST -------------------- */
+
+// createMoviesVanillaJs();
+// createGenresVanillaJs();
+
 /* --------------- UPDATE / PUT --------------------- */
 
-// updateMoviesJquery();
-// updateGenresJquery();
 // updateMoviesVanillaJs();
 // updateGenresVanillaJs();
+
+/* --------------- Delete --------------------- */
+
+// deleteMoviesVanillaJs();
+// getMoviesVanillaJsById();
