@@ -8,7 +8,7 @@
 
 const getMoviesJquery = () => {
   $.ajax({
-    url: "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/movies",
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -19,7 +19,7 @@ const getMoviesJquery = () => {
 
 const getGenresJquery = () => {
   $.ajax({
-    url: "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/genres",
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
     type: "GET",
     dataType: "json",
     success: function (response) {
@@ -33,7 +33,7 @@ const getGenresJquery = () => {
 const getMoviesJqueryById = () => {
   $.ajax({
     url:
-      "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/movies/" +
+      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
       1 /* add some id */,
     type: "GET",
     dataType: "json",
@@ -46,7 +46,7 @@ const getMoviesJqueryById = () => {
 const getGenresJqueryById = () => {
   $.ajax({
     url:
-      "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/genres/" +
+      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
       1 /* add some id */,
     type: "GET",
     dataType: "json",
@@ -58,6 +58,40 @@ const getGenresJqueryById = () => {
 
 // UPDATE
 
+const updateMoviesJquery = () => {
+  $.ajax({
+    url:
+      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
+      1 /* add some id */,
+    type: "PUT",
+    data: {
+      name: "Spieder-Men",
+      synopsis: "Good!",
+      genre_id: 1,
+    },
+    dataType: "text",
+    success: function (response) {
+      console.log(response);
+    },
+  });
+};
+
+const updateGenresJquery = () => {
+  $.ajax({
+    url:
+      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
+      1 /* add some id */,
+    type: "PUT",
+    data: {
+      name: "LoveJquery",
+    },
+    dataType: "text",
+    success: function (response) {
+      console.log(response);
+    },
+  });
+};
+
 // DELETE
 
 // -----------------------------------------------------------------------------------------
@@ -67,12 +101,9 @@ const getGenresJqueryById = () => {
 // GET
 
 const getMoviesVanillaJs = () => {
-  fetch(
-    "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/movies",
-    {
-      method: "GET",
-    }
-  )
+  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/movies", {
+    method: "GET",
+  })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => {
@@ -81,12 +112,9 @@ const getMoviesVanillaJs = () => {
 };
 
 const getGenresVanillaJs = () => {
-  fetch(
-    "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/genres",
-    {
-      method: "GET",
-    }
-  )
+  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
+    method: "GET",
+  })
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => {
@@ -98,7 +126,7 @@ const getGenresVanillaJs = () => {
 
 const getMoviesVanillaJsById = () => {
   fetch(
-    "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/movies/" +
+    "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
       1 /* add some id */,
     {
       method: "GET",
@@ -113,7 +141,7 @@ const getMoviesVanillaJsById = () => {
 
 const getGenresVanillaJsById = () => {
   fetch(
-    "https://muscid-buses.000webhostapp.com/lavarel-RESTful-api/public/api/genres/" +
+    "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
       1 /* add some id */,
     {
       method: "GET",
@@ -124,6 +152,48 @@ const getGenresVanillaJsById = () => {
     .catch((error) => {
       console.error("Error:", error);
     });
+};
+
+// UPDATE
+
+const updateMoviesVanillaJs = () => {
+  fetch(
+    "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
+      1 /* add some id*/,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Juan Carloss",
+        synopsis: "Very good",
+        genre_id: 2,
+      }),
+    }
+  )
+    .then((response) => response.text())
+    .then((data) => console.log(data))
+    .catch((error) => console.error("Error:", error));
+};
+
+const updateGenresVanillaJs = () => {
+  fetch(
+    "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
+      1 /* add some id*/,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Love",
+      }),
+    }
+  )
+    .then((response) => response.text())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
 };
 
 // -----------------------------------------------------------------------------------------
@@ -139,9 +209,14 @@ const getGenresVanillaJsById = () => {
 
 /* --------------- GET BY ID --------------------- */
 
-getMoviesJqueryById();
-getGenresJqueryById();
-getMoviesVanillaJsById();
-getGenresVanillaJsById();
+// getMoviesJqueryById();
+// getGenresJqueryById();
+// getMoviesVanillaJsById();
+// getGenresVanillaJsById();
 
 /* --------------- UPDATE / PUT --------------------- */
+
+// updateMoviesJquery();
+// updateGenresJquery();
+// updateMoviesVanillaJs();
+// updateGenresVanillaJs();
