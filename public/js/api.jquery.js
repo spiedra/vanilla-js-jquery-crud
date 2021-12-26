@@ -126,15 +126,14 @@ const updateGenresJquery = () => {
 
 /* --------------- Delete --------------------- */
 
-const deleteMoviesJquery = () => {
+const deleteMoviesJquery = (btnContext) => {
+  const movieId = $(btnContext).closest("tr").find("td").eq(0).text();
   $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      35 /* add some id */,
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" + movieId,
     type: "DELETE",
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      showMessageResponseAfterDelete(response);
     },
   });
 };
