@@ -3,22 +3,26 @@
 /* --------------- GET --------------------- */
 
 const getMoviesVanillaJs = () => {
-  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/movies", {
+  return fetch("https://lavarel-rest-ful-api.vercel.app/public/api/movies", {
     method: "GET",
   })
     .then((response) => response.json())
-    .then((data) => fillMoviesTbodyVanillaJs(data))
+    .then((data) => {
+      return data;
+    })
     .catch((error) => {
       console.error("Error:", error);
     });
 };
 
 const getGenresVanillaJs = () => {
-  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
+  return fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
     method: "GET",
   })
     .then((response) => response.json())
-    .then((data) => fillGenresTbodyVanillaJs(data))
+    .then((data) => {
+      return data;
+    })
     .catch((error) => {
       console.error("Error:", error);
     });
@@ -161,8 +165,8 @@ const deleteMoviesVanillaJs = (btnContext) => {
 
 /* --------------- GET --------------------- */
 
-getMoviesVanillaJs();
-getGenresVanillaJs();
+// getGenresVanillaJs();
+// getMoviesVanillaJs();
 
 /* --------------- GET BY ID --------------------- */
 
