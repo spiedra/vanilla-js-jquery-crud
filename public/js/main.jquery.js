@@ -13,10 +13,9 @@ function fillMoviesTbodyJquery(reponse) {
   moviesTbody.empty();
 
   reponse.forEach((element) => {
-    var elementId = element["id"];
     moviesTbody.append(
       $("<tr>")
-        .append($("<td>").append(elementId))
+        .append($("<td>").append(element["id"]))
         .append($("<td>").append(element["name"]))
         .append($("<td>").append(element["synopsis"]))
         .append($("<td>").append(element["genre_id"]))
@@ -26,9 +25,7 @@ function fillMoviesTbodyJquery(reponse) {
               "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
             ).append("Add"),
             $(
-              "<button id='" +
-                elementId +
-                "'class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
+              "<button class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
             ).append("Delete"),
             $(
               "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
@@ -65,7 +62,7 @@ function fillGenresTbodyJquery(reponse) {
 
 /* ------------------------------------------------- */
 
-function showMessageResponseAfterDelete(response) {
+function showMessageResponseAfterDeleteJquery(response) {
   alert(response["message"]);
   getMoviesJquery();
 }

@@ -144,8 +144,8 @@ const deleteMoviesJquery = (btnContext) => {
 
 /* --------------- GET --------------------- */
 
-getMoviesJquery();
-getGenresJquery();
+// getMoviesJquery();
+// getGenresJquery();
 
 /* --------------- GET BY ID --------------------- */
 

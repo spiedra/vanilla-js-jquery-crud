@@ -7,7 +7,7 @@ const getMoviesVanillaJs = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => fillMoviesTbodyVanillaJs(data))
     .catch((error) => {
       console.error("Error:", error);
     });
@@ -18,7 +18,7 @@ const getGenresVanillaJs = () => {
     method: "GET",
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => fillGenresTbodyVanillaJs(data))
     .catch((error) => {
       console.error("Error:", error);
     });
@@ -138,10 +138,11 @@ const updateGenresVanillaJs = () => {
 
 /* --------------- Delete --------------------- */
 
-const deleteMoviesVanillaJs = () => {
+const deleteMoviesVanillaJs = (btnContext) => {
+  const row = btnContext.parentNode.parentNode;
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      36 /* add some id*/,
+      row.cells[0].textContent,
     {
       method: "DELETE",
       headers: {
@@ -150,7 +151,7 @@ const deleteMoviesVanillaJs = () => {
     }
   )
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => showMessageResponseAfterDeleteVanillaJs(data))
     .catch((error) => console.error(error));
 };
 
@@ -160,8 +161,8 @@ const deleteMoviesVanillaJs = () => {
 
 /* --------------- GET --------------------- */
 
-// getMoviesVanillaJs();
-// getGenresVanillaJs();
+getMoviesVanillaJs();
+getGenresVanillaJs();
 
 /* --------------- GET BY ID --------------------- */
 
