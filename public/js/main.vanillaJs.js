@@ -5,9 +5,13 @@
     * https://www.geeksforgeeks.org/difference-between-foreach-and-map-loop-in-javascript/
 */
 
-function fillMoviesTbodyVanillaJs() {
+const fillMoviesTbodyVanillaJs = async () => {
   const _moviesTbody = moviesTbody;
   let tbody = "";
+
+  const genres = await getGenresVanillaJs().then((response) => {
+    return response;
+  });
 
   getMoviesVanillaJs().then((response) => {
     response.forEach((element) => {
@@ -16,16 +20,11 @@ function fillMoviesTbodyVanillaJs() {
           <td>${element["id"]}</td>
           <td>${element["name"]}</td>
           <td>${element["synopsis"]}</td>
-          <td>${getGenresVanillaJs().then((response) => {
-            response
-              .map((elementGenre) => {
-                elementGenre["id"] === element["genre_id"]
-                  ? elementGenre["name"]
-                  : element["genre_id"];
-                // condicional ? true : false
-              })
-              .join("");
-          })}</td>
+          <td>${genres
+            .map((genre) => {
+              if (element["genre_id"] === genre["id"]) return genre["name"];
+            })
+            .join("")}</td>
           <td>
               <button class="btn__add" onClick="createMoviesVanillaJs">Add</button>
               <button class="btn__delete" onClick="deleteMoviesVanillaJs(this)">Delete</button>
@@ -35,7 +34,7 @@ function fillMoviesTbodyVanillaJs() {
     });
     _moviesTbody.innerHTML = tbody;
   });
-}
+};
 
 function fillGenresTbodyVanillaJs() {
   const _genresTbody = genresTbody;

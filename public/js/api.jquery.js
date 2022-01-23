@@ -2,17 +2,19 @@
 
 /*
   Docs: https://www.w3schools.com/jquery/ajax_ajax.asp
+  ---
+  * Una función que pasa como arguemento a otra función, se llama callback function
 */
 
 /* --------------- GET --------------------- */
 
-const getMoviesJquery = () => {
+const getMoviesJquery = (callback) => {
   $.ajax({
     url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
     type: "GET",
     dataType: "json",
     success: function (response) {
-      fillMoviesTbodyJquery(response);
+      callback(response);
     },
   });
 };

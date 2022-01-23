@@ -5,36 +5,40 @@
     * const: cannot be Redeclared | cannot be Reassigned | has Block Scope
   Docs: https://www.w3schools.com/js/js_variables.asp 
 */
-
+https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
 // DOM Manipulation -> JQuery
 
-function fillMoviesTbodyJquery(reponse) {
+function fillMoviesTbodyJquery() {
   const moviesTbody = $("#moviesTbody");
   moviesTbody.empty();
 
-  reponse.forEach((element) => {
-    moviesTbody.append(
-      $("<tr>")
-        .append($("<td>").append(element["id"]))
-        .append($("<td>").append(element["name"]))
-        .append($("<td>").append(element["synopsis"]))
-        .append($("<td>").append(element["genre_id"]))
-        .append(
-          $("<td>").append(
-            $(
-              "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
-            ).append("Add"),
-            $(
-              "<button class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
-            ).append("Delete"),
-            $(
-              "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
-            ).append("Edit")
+  getMoviesJquery(function (response) {
+    response.forEach((element) => {
+      moviesTbody.append(
+        $("<tr>")
+          .append($("<td>").append(element["id"]))
+          .append($("<td>").append(element["name"]))
+          .append($("<td>").append(element["synopsis"]))
+          .append($("<td>").append(element["genre_id"]))
+          .append(
+            $("<td>").append(
+              $(
+                "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
+              ).append("Add"),
+              $(
+                "<button class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
+              ).append("Delete"),
+              $(
+                "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
+              ).append("Edit")
+            )
           )
-        )
-    );
+      );
+    });
   });
 }
+
+// fillMoviesTbodyJquery();
 
 function fillGenresTbodyJquery(reponse) {
   const moviesTbody = $("#genresTbody");
