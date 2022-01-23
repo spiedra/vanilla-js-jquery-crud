@@ -5,10 +5,10 @@
     * const: cannot be Redeclared | cannot be Reassigned | has Block Scope
   Docs: https://www.w3schools.com/js/js_variables.asp 
 */
-https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
+//www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
 // DOM Manipulation -> JQuery
 
-function fillMoviesTbodyJquery() {
+https: function fillMoviesTbodyJquery() {
   const moviesTbody = $("#moviesTbody");
   moviesTbody.empty();
 
@@ -23,14 +23,11 @@ function fillMoviesTbodyJquery() {
           .append(
             $("<td>").append(
               $(
-                "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
-              ).append("Add"),
+                "<button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal'  onClick='deleteMoviesJquery(this)'>"
+              ).append("Edit"),
               $(
-                "<button class='btn__delete' type='button' onClick='deleteMoviesJquery(this)'>"
-              ).append("Delete"),
-              $(
-                "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
-              ).append("Edit")
+                "<button class='btn btn-danger btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#deleteModal' onClick='updateMoviesJquery(this)'>"
+              ).append("Delete")
             )
           )
       );
@@ -53,10 +50,7 @@ function fillGenresTbodyJquery(reponse) {
         .append(
           $("<td>").append(
             $(
-              "<button class='btn__add' type='button' onClick='createMoviesJquery(this)'>"
-            ).append("Add"),
-            $(
-              "<button class='btn__edit' type='button' onClick='updateMoviesJquery(this)'>"
+              "<button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick='updateMoviesJquery(this)'>"
             ).append("Edit")
           )
         )

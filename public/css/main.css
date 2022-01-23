@@ -4,76 +4,15 @@ body {
 }
 
 main {
-  min-height: 100vh;
-  padding: 1rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  min-height: 100vh !important;
 }
 
-header h1 {
-  text-align: center;
-}
-
-main section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 80%;
-  background-color: #f2f2f2;
-  padding: 0 1.5em 1.5em 1.5em;
-  border-radius: 10px;
-}
-
-main section h2 {
-  margin-left: 1em;
-}
-
-main section table {
-  align-self: center;
-  width: 98%;
-}
-
-main section table td {
-  padding: 0.5em;
-  border: 1px solid;
-}
-
-main section:nth-child(1) {
-  margin-bottom: 3em;
-}
-
-.btn__add,
-.btn__delete,
-.btn__edit {
-  padding: 10px 15px;
-  cursor: pointer;
-  color: #ffff;
-  border: none;
-  border-radius: 10px;
-  margin: 0.2em;
-}
-
+.btn__search,
+.btn__refresh,
 .btn__add {
-  background-color: #198754;
+  background-color: rgba(204, 204, 204, 0.959) !important;
 }
 
-.btn__delete {
-  background-color: #dc3545;
-}
-
-.btn__edit {
-  background-color: #0d6efd;
-}
-
-footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.btn__search:hover, .btn__refresh:hover, .btn__add:hover {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5) !important;
 }

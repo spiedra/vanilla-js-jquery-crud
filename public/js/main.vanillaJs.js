@@ -26,9 +26,8 @@ const fillMoviesTbodyVanillaJs = async () => {
             })
             .join("")}</td>
           <td>
-              <button class="btn__add" onClick="createMoviesVanillaJs">Add</button>
-              <button class="btn__delete" onClick="deleteMoviesVanillaJs(this)">Delete</button>
-              <button class="btn__edit" onClick="updateMoviesVanillaJs">Edit</button>
+              <button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick="updateMoviesVanillaJs">Edit</button>
+              <button class='btn btn-danger btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#deleteModal' onClick="deleteMoviesVanillaJs(this)">Delete</button>
           </td>
       </tr>`;
     });
@@ -46,8 +45,7 @@ function fillGenresTbodyVanillaJs() {
           <td>${element["id"]}</td>
           <td>${element["name"]}</td>
           <td>
-              <button class="btn__add" onClick="createMoviesVanillaJs">Add</button>
-              <button class="btn__edit" onClick="updateMoviesVanillaJs">Edit</button>
+              <button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick="updateMoviesVanillaJs">Edit</button>
           </td>
       </tr>`;
     });
