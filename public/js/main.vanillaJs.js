@@ -62,5 +62,5 @@ function showMessageResponseAfterDeleteVanillaJs(data) {
 
 /* -------------------- Requests ---------------------- */
 
-fillMoviesTbodyVanillaJs();
-fillGenresTbodyVanillaJs();
+// fillMoviesTbodyVanillaJs();
+// fillGenresTbodyVanillaJs();

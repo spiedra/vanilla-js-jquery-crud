@@ -39,7 +39,7 @@
         <div class="mt-4 mb-2">
             <h1 class="promo-table__title d-inline me-3">Movie manager</h1>
             <button class="btn mb-3 d-inline btn__add" data-bs-toggle="modal" data-bs-target="#addModal"
-                data-bs-placement="right" title="Add" onclick="putRolesOnAddModal(); return false;">
+                data-bs-placement="right" title="Add" onclick="putGenresInAddModal(); return false;">
                 <img src="../public/images/add_black_24dp.svg" alt="Add icon" />
             </button>
             <button class="btn mb-3 d-inline btn__search" data-bs-toggle="modal" data-bs-target="#searchModal"
@@ -81,15 +81,15 @@
                         </div>
                         <div class="col-md-5">
                             <label>Nombre</label>
-                            <input id="inputName" class="form-control" type="text" />
+                            <input id="inputNameEditModal" class="form-control" type="text" />
                         </div>
                         <div class="col-md-5">
                             <label>Genre</label>
-                            <select id="selectGenre" class="form-select"></select>
+                            <select id="selectGenreEditModal" class="form-select"></select>
                         </div>
                         <div class="col-md-12">
                             <label>Synopsis</label>
-                            <textarea id="txtAreaSynopsis" class="form-control"></textarea>
+                            <textarea id="txtAreaSynopsisEditModal" class="form-control"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -111,15 +111,15 @@
                     <div class="modal-body row g-3">
                         <div class="col-md-6">
                             <label>Nombre</label>
-                            <input id="inputName" class="form-control" type="text" placeholder="Enter the name" />
+                            <input id="inputNameAddModal" class="form-control" type="text" placeholder="Enter the name" />
                         </div>
                         <div class="col-md-6">
                             <label>Genre</label>
-                            <select id="selectGenre" class="form-select"></select>
+                            <select id="selectGenreAddModal" class="form-select"></select>
                         </div>
                         <div class="col-md-12">
                             <label>Synopsis</label>
-                            <textarea id="txtAreaSynopsis" class="form-control"
+                            <textarea id="txtAreaSynopsisAddModal" class="form-control"
                                 placeholder="Enter the sypnosis"></textarea>
                         </div>
                     </div>
@@ -127,8 +127,8 @@
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Close
                         </button>
-                        <button type="button" class="btn btn-primary">
-                            Save changes
+                        <button type="button" class="btn btn-primary" onclick="addMovie()">
+                            Confirm
                         </button>
                     </div>
                 </div>
@@ -183,10 +183,10 @@
 
     <script src="../public/lib/jquery/dist/jquery.min.js"></script>
     <script src="../public/js/api.jquery.js"></script>
-    <script src="../public/js/main.jquery.js"></script>
     <script src="../public/js/api.vanillaJs.js"></script>
     <script src="../public/js/main.jquery.js"></script>
     <script src="../public/js/main.vanillaJs.js"></script>
+    <script src="../public/js/modal.jquery.js"></script>
     <script src="../public/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 

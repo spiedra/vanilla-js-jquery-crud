@@ -5,10 +5,10 @@
     * const: cannot be Redeclared | cannot be Reassigned | has Block Scope
   Docs: https://www.w3schools.com/js/js_variables.asp 
 */
-//www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
+// Callback function: www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/
 // DOM Manipulation -> JQuery
 
-https: function fillMoviesTbodyJquery() {
+function fillMoviesTbodyJquery() {
   const moviesTbody = $("#moviesTbody");
   moviesTbody.empty();
 
@@ -35,26 +35,26 @@ https: function fillMoviesTbodyJquery() {
   });
 }
 
-// fillMoviesTbodyJquery();
-
-function fillGenresTbodyJquery(reponse) {
+function fillGenresTbodyJquery() {
   const moviesTbody = $("#genresTbody");
   moviesTbody.empty();
 
-  reponse.forEach((element) => {
-    var elementId = element["id"];
-    moviesTbody.append(
-      $("<tr>")
-        .append($("<td>").append(elementId))
-        .append($("<td>").append(element["name"]))
-        .append(
-          $("<td>").append(
-            $(
-              "<button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick='updateMoviesJquery(this)'>"
-            ).append("Edit")
+  getGenresJquery(function (response) {
+    response.forEach((element) => {
+      var elementId = element["id"];
+      moviesTbody.append(
+        $("<tr>")
+          .append($("<td>").append(elementId))
+          .append($("<td>").append(element["name"]))
+          .append(
+            $("<td>").append(
+              $(
+                "<button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick='updateMoviesJquery(this)'>"
+              ).append("Edit")
+            )
           )
-        )
-    );
+      );
+    });
   });
 }
 
@@ -64,3 +64,6 @@ function showMessageResponseAfterDeleteJquery(response) {
   alert(response["message"]);
   getMoviesJquery();
 }
+
+fillMoviesTbodyJquery();
+fillGenresTbodyJquery();

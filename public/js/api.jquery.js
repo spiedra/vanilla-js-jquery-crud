@@ -19,13 +19,13 @@ const getMoviesJquery = (callback) => {
   });
 };
 
-const getGenresJquery = () => {
+const getGenresJquery = (callback) => {
   $.ajax({
     url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
     type: "GET",
     dataType: "json",
     success: function (response) {
-      fillGenresTbodyJquery(response);
+      callback(response);
     },
   });
 };
@@ -60,18 +60,18 @@ const getGenresJqueryById = () => {
 
 /* --------------- CREATE / POST -------------------- */
 
-const createMoviesJquery = () => {
+const createMoviesJquery = (data, callback) => {
   $.ajax({
     url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies",
     type: "POST",
     data: {
-      name: "Spieder-Men 2",
-      synopsis: "Good!",
-      genre_id: 1,
+      name: data.name,
+      synopsis: data.synopsis,
+      genre_id: data.genreId,
     },
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      callback(response);
     },
   });
 };
