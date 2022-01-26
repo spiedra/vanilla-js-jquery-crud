@@ -1,0 +1,3 @@
+const refreshPage = () => {
+    location.reload();
+}

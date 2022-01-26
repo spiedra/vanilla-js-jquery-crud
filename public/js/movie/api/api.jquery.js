@@ -19,49 +19,15 @@ const getMoviesJquery = (callback) => {
   });
 };
 
-const getGenresJquery = (callback) => {
-  $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      callback(response);
-    },
-  });
-};
-
-const getGenresJquery2 = () => {
-  return $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
-    type: "GET",
-    dataType: "json",
-  });
-};
-
 /* --------------- GET BY ID --------------------- */
 
 const getMoviesJqueryById = (movieId, callback) => {
   $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      movieId,
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" + movieId,
     type: "GET",
     dataType: "json",
     success: function (response) {
       callback(response);
-    },
-  });
-};
-
-const getGenresJqueryById = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      35 /* add some id */,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
     },
   });
 };
@@ -84,20 +50,6 @@ const createMoviesJquery = (data, callback) => {
   });
 };
 
-const createGenresJquery = () => {
-  $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
-    type: "POST",
-    data: {
-      name: "Action 9",
-    },
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
 /* --------------- UPDATE / PUT --------------------- */
 
 const updateMoviesJquery = (data, callback) => {
@@ -116,29 +68,11 @@ const updateMoviesJquery = (data, callback) => {
   });
 };
 
-const updateGenresJquery = () => {
-  $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      1 /* add some id */,
-    type: "PUT",
-    data: {
-      name: "LoveJquery",
-    },
-    dataType: "json",
-    success: function (response) {
-      console.log(response);
-    },
-  });
-};
-
 /* --------------- Delete --------------------- */
 
 const deleteMoviesJquery = (movieId, callback) => {
   $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      movieId,
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" + movieId,
     type: "DELETE",
     dataType: "json",
     success: function (response) {

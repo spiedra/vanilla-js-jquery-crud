@@ -10,7 +10,7 @@
 
 var movieIdDelete;
 
-//
+/* ------------------------- common ---------------------------- */
 
 const buildMovieTbodyJquery = (genres, element) => {
   $("#moviesTbody").append(
@@ -40,7 +40,6 @@ const buildMovieTbodyJquery = (genres, element) => {
   );
 };
 
-//
 
 async function fillMoviesTbodyJquery() {
   $("#moviesTbody").empty();
@@ -56,32 +55,7 @@ async function fillMoviesTbodyJquery() {
   });
 }
 
-function fillGenresTbodyJquery() {
-  const moviesTbody = $("#genresTbody");
-  moviesTbody.empty();
-
-  getGenresJquery(function (response) {
-    response.forEach((element) => {
-      var elementId = element["id"];
-      moviesTbody.append(
-        $("<tr>")
-          .append($("<td>").append(elementId))
-          .append($("<td>").append(element["name"]))
-          .append(
-            $("<td>").append(
-              $(
-                "<button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick='updateMoviesJquery(this)'>"
-              ).append("Edit")
-            )
-          )
-      );
-    });
-  });
-}
-
-/* ------------------ Modal ------------------------ */
-
-// Add
+/* ------------------------- Add movie ------------------------- */
 
 const putGenresInAddModal = () => {
   const selectGenre = $("#selectGenreAddModal");
@@ -98,23 +72,6 @@ const putGenresInAddModal = () => {
   });
 };
 
-// Find: https://api.jquery.com/find/
-const addMovieJquery = () => {
-  const data = {
-    name: $("#inputNameAddModal").val(),
-    synopsis: $("#txtAreaSynopsisAddModal").val(),
-    genreId: $("#selectGenreAddModal").find("option:selected").attr("id"),
-  };
-
-  createMoviesJquery(data, function (response) {
-    fillMoviesTbodyJquery();
-    $("#addModal").modal("hide");
-    createModalResponse(response["message:"]);
-  });
-};
-
-// Edit
-
 const putMovieDataInAddModal = (btnContext) => {
   const movieDataArray = $(btnContext).closest("tr").children();
 
@@ -128,13 +85,30 @@ const putMovieDataInAddModal = (btnContext) => {
   // Method #2
 
   /*
-    .eq(): https://api.jquery.com/eq/
-    .find(): https://api.jquery.com/find/#find-selector
-    .closest(): https://api.jquery.com/closest/#closest-selector-context
-
-    $(btnContext).closest("tr").find("td").eq(0).text();
-  */
+      .eq(): https://api.jquery.com/eq/
+      .find(): https://api.jquery.com/find/#find-selector
+      .closest(): https://api.jquery.com/closest/#closest-selector-context
+  
+      $(btnContext).closest("tr").find("td").eq(0).text();
+    */
 };
+
+// Find: https://api.jquery.com/find/
+const addMovie = () => {
+  const data = {
+    name: $("#inputNameAddModal").val(),
+    synopsis: $("#txtAreaSynopsisAddModal").val(),
+    genreId: $("#selectGenreAddModal").find("option:selected").attr("id"),
+  };
+
+  createMoviesJquery(data, function (response) {
+    fillMoviesTbodyJquery();
+    $("#addModal").modal("hide");
+    createModalResponse(response["message:"]);
+  });
+};
+
+/* ------------------------- Edit movie ------------------------- */
 
 const putGenresInEditModal = (currentGenre) => {
   const selectGenre = $("#selectGenreEditModal");
@@ -172,7 +146,7 @@ const editMovie = () => {
   });
 };
 
-// Delete
+/* ------------------------- Delete movie ------------------------- */
 
 const putMovieDataInDeleteModal = (btnContext) => {
   // save the last movie clicked
@@ -209,7 +183,7 @@ const removeMovie = () => {
   });
 };
 
-// Search
+/* ------------------------- Search movie ------------------------- */
 
 const searchMovieById = async () => {
   const movieId = $("#inputIdSerachModal").val();
@@ -225,12 +199,6 @@ const searchMovieById = async () => {
   });
 };
 
-// Refresh
-
-const refreshPage = () => {
-  location.reload();
-};
-
-/* ------------------------------------------------- */
+// First request
 
 fillMoviesTbodyJquery();
