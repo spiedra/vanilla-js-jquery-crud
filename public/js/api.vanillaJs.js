@@ -33,7 +33,7 @@ const getGenresVanillaJs = () => {
 const getMoviesVanillaJsById = () => {
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      -1 /* add some id */,
+    -1 /* add some id */,
     {
       method: "GET",
     }
@@ -48,7 +48,7 @@ const getMoviesVanillaJsById = () => {
 const getGenresVanillaJsById = () => {
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      1 /* add some id */,
+    1 /* add some id */,
     {
       method: "GET",
     }
@@ -103,7 +103,7 @@ const createGenresVanillaJs = () => {
 const updateMoviesVanillaJs = () => {
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      1 /* add some id*/,
+    1 /* add some id*/,
     {
       method: "PUT",
       headers: {
@@ -124,7 +124,7 @@ const updateMoviesVanillaJs = () => {
 const updateGenresVanillaJs = () => {
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" +
-      1 /* add some id*/,
+    1 /* add some id*/,
     {
       method: "PUT",
       headers: {
@@ -146,7 +146,7 @@ const deleteMoviesVanillaJs = (btnContext) => {
   const row = btnContext.parentNode.parentNode;
   fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      row.cells[0].textContent,
+    row.cells[0].textContent,
     {
       method: "DELETE",
       headers: {

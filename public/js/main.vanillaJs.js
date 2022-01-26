@@ -21,10 +21,10 @@ const fillMoviesTbodyVanillaJs = async () => {
           <td>${element["name"]}</td>
           <td>${element["synopsis"]}</td>
           <td>${genres
-            .map((genre) => {
-              if (element["genre_id"] === genre["id"]) return genre["name"];
-            })
-            .join("")}</td>
+          .map((genre) => {
+            if (element["genre_id"] === genre["id"]) return genre["name"];
+          })
+          .join("")}</td>
           <td>
               <button class='btn btn-primary btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#editModal' onClick="updateMoviesVanillaJs">Edit</button>
               <button class='btn btn-danger btn-sm my-1 my-xl-0' data-bs-toggle='modal' data-bs-target='#deleteModal' onClick="deleteMoviesVanillaJs(this)">Delete</button>

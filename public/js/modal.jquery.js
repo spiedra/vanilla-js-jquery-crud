@@ -22,6 +22,7 @@ const addMovie = () => {
   };
 
   createMoviesJquery(data, function (response) {
-    console.log(response["message:"]);
+    $('#addModal').modal('hide');
+    createModalResponse(response["message:"]);
   });
 };

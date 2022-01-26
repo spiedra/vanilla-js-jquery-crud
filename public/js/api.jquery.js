@@ -30,17 +30,25 @@ const getGenresJquery = (callback) => {
   });
 };
 
+const getGenresJquery2 = () => {
+  return $.ajax({
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/genres",
+    type: "GET",
+    dataType: "json",
+  });
+};
+
 /* --------------- GET BY ID --------------------- */
 
-const getMoviesJqueryById = () => {
+const getMoviesJqueryById = (movieId, callback) => {
   $.ajax({
     url:
       "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      35 /* add some id */,
+      movieId,
     type: "GET",
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      callback(response);
     },
   });
 };
@@ -92,20 +100,18 @@ const createGenresJquery = () => {
 
 /* --------------- UPDATE / PUT --------------------- */
 
-const updateMoviesJquery = () => {
+const updateMoviesJquery = (data, callback) => {
   $.ajax({
-    url:
-      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
-      1 /* add some id */,
+    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" + data.id,
     type: "PUT",
     data: {
-      name: "Spieder-Men",
-      synopsis: "Good!",
-      genre_id: 1,
+      name: data.name,
+      synopsis: data.synopsis,
+      genre_id: data.genreId,
     },
     dataType: "json",
     success: function (response) {
-      console.log(response);
+      callback(response);
     },
   });
 };
@@ -128,42 +134,15 @@ const updateGenresJquery = () => {
 
 /* --------------- Delete --------------------- */
 
-const deleteMoviesJquery = (btnContext) => {
-  const movieId = $(btnContext).closest("tr").find("td").eq(0).text();
+const deleteMoviesJquery = (movieId, callback) => {
   $.ajax({
-    url: "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" + movieId,
+    url:
+      "https://lavarel-rest-ful-api.vercel.app/public/api/movies/" +
+      movieId,
     type: "DELETE",
     dataType: "json",
     success: function (response) {
-      showMessageResponseAfterDelete(response);
+      callback(response);
     },
   });
 };
-
-// -----------------------------------------------------------------------------------------
-
-// Requests
-
-/* --------------- GET --------------------- */
-
-// getMoviesJquery();
-// getGenresJquery();
-
-/* --------------- GET BY ID --------------------- */
-
-// getMoviesJqueryById();
-// getGenresJqueryById();
-
-/* --------------- CREAT / POST --------------------- */
-
-// createMoviesJquery();
-// createGenresJquery();
-
-/* --------------- UPDATE / PUT --------------------- */
-
-// updateMoviesJquery();
-// updateGenresJquery();
-
-/* --------------- Delete --------------------- */
-
-// deleteMoviesJquery();
