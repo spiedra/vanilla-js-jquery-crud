@@ -1,5 +1,9 @@
 # Vanilla JS and JQuery CRUD
 
+## About
+
+I've created this repository as a source of knowledge to help people new to `JavaScript` and `JQuery` technologies by doing basic examples, such as: iterating arrays, getting information from objects and simple CRUD operations.
+
 Built with:
 
 - HTML5
