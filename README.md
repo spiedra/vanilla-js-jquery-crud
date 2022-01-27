@@ -8,7 +8,7 @@ Built with:
 
 - HTML5
 - JavaScript
-- JQuery
+- JQuery v3.6.0
 - Boostrap 5
 
 ## Setup
