@@ -11,6 +11,11 @@ Built with:
 - JQuery
 - Boostrap 5
 
+## Setup
+
+- The complete project can be found in the `final-solution` branch
+- The `master` branch should be used to create forks
+
 ## Contributing
 If you want to make a contribution, please follow the next steps:
 
