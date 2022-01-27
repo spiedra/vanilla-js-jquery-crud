@@ -11,7 +11,7 @@ Built with:
 If you want to make a contribution, please follow the next steps:
 
 1. Fork the Project
-2. Create your freature branch (git checkout -b feature/newFeature)
-3. Commit your Changes
-4. Push to the Branch (git push origin feature/newFeature)
-5. Open a Pull Request
+2. Create your feature branch (git checkout -b feature/newFeature)
+3. Commit your changes
+4. Push to the branch (git push origin feature/newFeature)
+5. Open a pull request
