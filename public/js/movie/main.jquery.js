@@ -40,15 +40,13 @@ const buildMovieTbodyJquery = (genres, element) => {
   );
 };
 
-
 async function fillMoviesTbodyJquery() {
-  $("#moviesTbody").empty();
-
   const genres = await getGenresJquery2().then((response) => {
     return response;
   });
 
   getMoviesJquery(function (response) {
+    $("#moviesTbody").empty();
     response.forEach((element) => {
       buildMovieTbodyJquery(genres, element);
     });
@@ -123,10 +121,11 @@ const putGenresInEditModal = (currentGenre) => {
             element["name"]
           )
         );
+      } else {
+        selectGenre.append(
+          $("<option id='" + element["id"] + "'>").append(element["name"])
+        );
       }
-      selectGenre.append(
-        $("<option id='" + element["id"] + "'>").append(element["name"])
-      );
     });
   });
 };

@@ -34,3 +34,6 @@ const fillMoviesTbodyVanillaJs = async () => {
       _moviesTbody.innerHTML = tbody;
     });
   };
+
+  // First request
+  fillMoviesTbodyVanillaJs();

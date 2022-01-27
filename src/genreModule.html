@@ -39,11 +39,11 @@
         <div class="mt-4 mb-2">
             <h1 class="promo-table__title d-inline me-3">Genre manager</h1>
             <button class="btn mb-3 d-inline btn__add" data-bs-toggle="modal" data-bs-target="#addModal"
-                data-bs-placement="right" title="Add" onclick="putRolesOnAddModal(); return false;">
+                data-bs-placement="right" title="Add">
                 <img src="../public/images/add_black_24dp.svg" alt="Add icon" />
             </button>
             <button class="btn mb-3 d-inline btn__search" data-bs-toggle="modal" data-bs-target="#searchModal"
-                data-bs-placement="right" title="Search" onclick="putRolesOnAddModal(); return false;">
+                data-bs-placement="right" title="Search">
                 <img src="../public/images/search_black_24dp.svg" alt="Search icon" />
             </button>
             <button class="btn mb-3 d-inline btn__refresh" title="Refresh" onclick="refreshPage(); return false">
@@ -75,18 +75,18 @@
                     <div class="modal-body row g-3">
                         <div class="col-md-2">
                             <label>ID</label>
-                            <input id="inputId" class="form-control" type="text" disabled />
+                            <input id="inputIdEditModal" class="form-control" type="text" disabled />
                         </div>
                         <div class="col-md-10">
                             <label>Name</label>
-                            <input id="inputName" class="form-control" type="text" />
+                            <input id="inputNameEditModal" class="form-control" type="text" />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Close
                         </button>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" onclick="editGenre()">
                             Save changes
                         </button>
                     </div>
@@ -103,14 +103,14 @@
                     <div class="modal-body row g-3">
                         <div class="col-md-12">
                             <label>Name</label>
-                            <input id="inputName" class="form-control" type="text" placeholder="Enter the name" />
+                            <input id="inputNameAddModal" class="form-control" type="text" placeholder="Enter the name" />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Close
                         </button>
-                        <button type="button" class="btn btn-primary">Confirm</button>
+                        <button type="button" class="btn btn-primary" onclick="addGenre()">Confirm</button>
                     </div>
                 </div>
             </div>
@@ -124,15 +124,15 @@
                     </div>
                     <div class="modal-body row g-3">
                         <div class="col-md-12">
-                            <label>Name</label>
-                            <input id="inputSearchName" class="form-control" type="text" />
+                            <label>ID</label>
+                            <input id="inputIdSearchModal" class="form-control" type="text" placeholder="Enter the genre ID" />
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             Close
                         </button>
-                        <button id="btn-search" type="submit" class="btn btn-primary" form="formSearchModal">
+                        <button type="button" class="btn btn-primary" onclick="searchGenre()">
                             Search
                         </button>
                     </div>
@@ -144,11 +144,32 @@
         <p>This is the footer</p>
     </footer>
 
+
     <script src="../public/lib/jquery/dist/jquery.min.js"></script>
-    <script src="../public/js/api.jquery.js"></script>
-    <script src="../public/js/api.vanillaJs.js"></script>
-    <script src="../public/js/main.jquery.js"></script>
-    <script src="../public/js/main.vanillaJs.js"></script>
+
+    <!-- Utility -->
+
+    <script src="../public/js/utility/modalResponse.jquery.js"></script>
+    <script src="../public/js/utility/refreshPage.vanilla.js"></script>
+
+    <!-- API jquery -->
+
+    <!-- <script src="../public/js/genre/api/api.jquery.js"></script> -->
+
+    <!-- API vanilla -->
+
+    <script src="../public/js/genre/api/api.vanilla.js"></script>
+
+    <!-- main jquery -->
+
+    <!-- <script src="../public/js/movie/main.jquery.js"></script> -->
+
+    <!-- main vanilla -->
+
+    <script src="../public/js/genre/main.vanilla.js"></script>
+
+    <!--  -->
+
     <script src="../public/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 

@@ -15,8 +15,8 @@ const getGenresVanillaJs = async () => {
 
 /* --------------- GET BY ID --------------------- */
 
-const getGenresVanillaJsById = (genreId) => {
-  fetch(
+const getGenresVanillaJsById = async (genreId) => {
+  return fetch(
     "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" + genreId,
     {
       method: "GET",
@@ -33,8 +33,8 @@ const getGenresVanillaJsById = (genreId) => {
 
 /* --------------- CREAT / POST --------------------- */
 
-const createGenresVanillaJs = (name) => {
-  fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
+const createGenresVanillaJs = async (name) => {
+  return fetch("https://lavarel-rest-ful-api.vercel.app/public/api/genres", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -54,9 +54,9 @@ const createGenresVanillaJs = (name) => {
 
 /* --------------- UPDATE / PUT --------------------- */
 
-const updateGenresVanillaJs = (data) => {
-  fetch(
-    "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" + data.id,
+const updateGenresVanillaJs = async (data) => {
+  return fetch(
+    "https://lavarel-rest-ful-api.vercel.app/public/api/genres/" + data.genreId,
     {
       method: "PUT",
       headers: {
