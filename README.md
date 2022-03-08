@@ -7,7 +7,7 @@ I've created this repository as a source of knowledge to help people new to `Jav
 - HTML5
 - JavaScript
 - JQuery
-- Boostrap 5
+- Bootstrap 5
 
 ## Getting Started
 
